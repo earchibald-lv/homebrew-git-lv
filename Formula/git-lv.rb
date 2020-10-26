@@ -4,16 +4,20 @@
 class GitLv < Formula
   desc ""
   homepage ""
-  url "https://vcs.build.livevox.net/earchibald/git-lv.git"
-  version "0.3.0"
+  url "https://vcs.build.livevox.net/earchibald/git-lv.git", :tag => "0.3.0"
   sha256 ""
   license ""
 
   # depends_on "cmake" => :build
 
   def install
-    mkdir_p "#{prefix}/bin"
-    bin.install "git-lv"
+    prefix.install Dir["./*"]
+    bin.write_exec_script libexec/"git-lv"
+
+    resource("completion").stage do
+      bash_completion.install "git-lv-completion.bash"
+    #mkdir_p "#{prefix}/bin"
+    #bin.install "git-lv"
     # ENV.deparallelize  # if your formula fails when building in parallel
     # Remove unrecognized options if warned by configure
 #    system "./configure", "--disable-debug",
