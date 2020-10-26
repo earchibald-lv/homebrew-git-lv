@@ -12,6 +12,7 @@ class GitLv < Formula
   # depends_on "cmake" => :build
 
   def install
+    mkdir_p "#{prefix}/bin"
     bin.install "git-lv"
     # ENV.deparallelize  # if your formula fails when building in parallel
     # Remove unrecognized options if warned by configure
