@@ -16,6 +16,8 @@ class GitLv < Formula
 
     resource("completion").stage do
       bash_completion.install "git-lv-completion.bash"
+    end
+
     #mkdir_p "#{prefix}/bin"
     #bin.install "git-lv"
     # ENV.deparallelize  # if your formula fails when building in parallel
