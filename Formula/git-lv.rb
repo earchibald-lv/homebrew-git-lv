@@ -4,7 +4,7 @@
 class GitLv < Formula
   desc ""
   homepage ""
-  url "ssh://git@vcs.build.livevox.net/earchibald/git-lv.git"
+  url "https://vcs.build.livevox.net/earchibald/git-lv.git"
   version "0.3.0"
   sha256 ""
   license ""
