@@ -14,9 +14,7 @@ class GitLv < Formula
     prefix.install Dir["./*"]
     bin.write_exec_script libexec/"git-lv"
 
-    resource("completion").stage do
-      bash_completion.install "git-lv-completion.bash"
-    end
+    bash_completion.install "#{prefix}/git-lv-completion.bash"
 
     #mkdir_p "#{prefix}/bin"
     #bin.install "git-lv"
