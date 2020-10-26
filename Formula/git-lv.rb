@@ -4,7 +4,7 @@
 class GitLv < Formula
   desc ""
   homepage ""
-  url "https://vcs.build.livevox.net/earchibald/git-lv.git", :tag => "0.3.0"
+  url "https://vcs.build.livevox.net/earchibald/git-lv.git", :tag => "0.4.0"
   sha256 ""
   license ""
 
