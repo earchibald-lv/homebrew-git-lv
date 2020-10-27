@@ -8,23 +8,23 @@ class GitLv < Formula
   sha256 ""
   license ""
 
-  # depends_on "cmake" => :build
+  depends_on "git"
+  depends_on "git-flow"
+  depends_on "awsume"
+  depends_on "pre-commit"
+  depends_on "checkov"
+  depends_on "terraform-docs"
+  depends_on "tflint"
+  depends_on "tfsec"
+  depends_on "shellcheck"
+  depends_on "shfmt"
 
   def install
     prefix.install Dir["./*"]
     bin.write_exec_script libexec/"git-lv"
 
     bash_completion.install "#{prefix}/git-lv-completion.bash"
-
-    #mkdir_p "#{prefix}/bin"
-    #bin.install "git-lv"
-    # ENV.deparallelize  # if your formula fails when building in parallel
-    # Remove unrecognized options if warned by configure
-#    system "./configure", "--disable-debug",
-#                          "--disable-dependency-tracking",
-#                          "--disable-silent-rules",
-#                          "--prefix=#{prefix}"
-    # system "cmake", ".", *std_cmake_args
+    system "awsume-configure", "--shell", "bash", "--autocomplete-file", "/usr/local/etc/bash_completion.d/awsume-completion.bash"
   end
 
   test do
